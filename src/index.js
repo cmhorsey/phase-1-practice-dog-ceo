@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
       dogPics.forEach(dog => {
         let img = document.createElement('img')
         img.src = dog[1]
-  
+        img.style.height = '25em'
+        img.style.width = '25em'
+
         dogContainer.appendChild(img)
       })
     })
@@ -26,8 +28,8 @@ function displayBreedList() {
     let dogObj = dogBreed.message
     for(const dogBreed in dogObj){
       let li = document.createElement('li')
-
       li.innerText = dogBreed
+      
       dogList.appendChild(li)
 
       li.addEventListener('click', () => {
@@ -55,7 +57,6 @@ function displayBreedList() {
     } sortBreeds()
   })
 }
-
   displayBreedList()
   displayDogs()
 })
